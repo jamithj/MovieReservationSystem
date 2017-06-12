@@ -1,0 +1,7 @@
+.idea/
+classes/
+/bin/
+*/bin/
+target/
+*.bat
+*.iml
