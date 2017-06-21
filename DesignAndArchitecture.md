@@ -86,6 +86,10 @@ Run Unit Test
 =============
 test in sbt console.
 
+Application Testing
+===================
+Use any rest api client to test the application. Use the json request structures outlined above to test each operation.
+
 Assumption
 ==========
 Movie id imdbId is an external identifier. This should be provided in the request.

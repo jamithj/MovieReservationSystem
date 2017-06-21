@@ -115,7 +115,9 @@ object MovieDB extends MovieDaoHelper {
     val request = fromJsonRetrieveMovieRequest(in)
     runQuery(db,movieReservationTable.filter(mrr => mrr.imdbId === request.imdbId && mrr.screenId === request.screenId).result.head).map { res =>
       res match {
-        case Left(err) => Left(err)
+        case Left(err) =>
+          println(s"retrieveMovie error: $err")
+          Left(Err(s"No movie found to retrieve ${request.imdbId} ${request.screenId}"))
         case Right(res) => Right(res)
       }
     }
